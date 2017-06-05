@@ -11,12 +11,12 @@ void ConfigureConsoleWindow ()
 	CONSOLE_CURSOR_INFO structCursorInfo;
 	GetConsoleCursorInfo(handle,&structCursorInfo);
 	structCursorInfo.bVisible = FALSE;
-	SetConsoleCursorInfo( handle, &structCursorInfo ); // Отключение каретки.
-	setlocale (LC_CTYPE, "Russian"); // Русская кодировка текста.
-	system ("color B"); // Светло-голубой цвет текста.
-	system("mode con cols=126 lines=31"); // Отключение боковой меню с прокруткой.
-	system ("title Dota 2 Optimizer"); // Заголовок программы.
-} // Функция для настройки консольного окна.
+	SetConsoleCursorInfo( handle, &structCursorInfo ); // РћС‚РєР»СЋС‡РµРЅРёРµ РєР°СЂРµС‚РєРё.
+	setlocale (LC_CTYPE, "Russian"); // Р СѓСЃСЃРєР°СЏ РєРѕРґРёСЂРѕРІРєР° С‚РµРєСЃС‚Р°.
+	system ("color B"); // РЎРІРµС‚Р»Рѕ-РіРѕР»СѓР±РѕР№ С†РІРµС‚ С‚РµРєСЃС‚Р°.
+	system("mode con cols=126 lines=31"); // РћС‚РєР»СЋС‡РµРЅРёРµ Р±РѕРєРѕРІРѕР№ РјРµРЅСЋ СЃ РїСЂРѕРєСЂСѓС‚РєРѕР№.
+	system ("title Dota 2 Optimizer"); // Р—Р°РіРѕР»РѕРІРѕРє РїСЂРѕРіСЂР°РјРјС‹.
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ РЅР°СЃС‚СЂРѕР№РєРё РєРѕРЅСЃРѕР»СЊРЅРѕРіРѕ РѕРєРЅР°.
 void Center (std::string Stroke)
 {
     CONSOLE_SCREEN_BUFFER_INFO consoleInfo;
@@ -24,7 +24,7 @@ void Center (std::string Stroke)
 		for (unsigned short int i = 0; i < ((consoleInfo.srWindow.Right - consoleInfo.srWindow.Left + 1) / 2 - strlen(Stroke.c_str()) / 2); i++)
 			std::cout << " ";
     std::cout << Stroke;
-} // Функция для размещения введенного нами текста по центру экрана.
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ СЂР°Р·РјРµС‰РµРЅРёСЏ РІРІРµРґРµРЅРЅРѕРіРѕ РЅР°РјРё С‚РµРєСЃС‚Р° РїРѕ С†РµРЅС‚СЂСѓ СЌРєСЂР°РЅР°.
 void TextInColor (std::string ColorName, std::string Text)
 {
 		if (ColorName == "Green")
@@ -35,12 +35,12 @@ void TextInColor (std::string ColorName, std::string Text)
 			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), (WORD)((0 << 4) | 14));
 	Center (Text);
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), (WORD)((0 << 4) | 11));
-} // Функция изменения цвета текста.
+} // Р¤СѓРЅРєС†РёСЏ РёР·РјРµРЅРµРЅРёСЏ С†РІРµС‚Р° С‚РµРєСЃС‚Р°..
 void padding (unsigned short int Count)
 {
 	for (unsigned short int i = 0; i < Count; i++)
 		std::cout << "\n";
-} // Функция для отступов.
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ РѕС‚СЃС‚СѓРїРѕРІ.
 void AnimationOfModuleOperation (std::string Text)
 {
 	unsigned short int C = 0;
@@ -55,7 +55,7 @@ void AnimationOfModuleOperation (std::string Text)
 				}
 		}
 	std::cout << "\n";
-} // Функция для анимации старта/завершения работы модуля.
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ Р°РЅРёРјР°С†РёРё СЃС‚Р°СЂС‚Р°/Р·Р°РІРµСЂС€РµРЅРёСЏ СЂР°Р±РѕС‚С‹ РјРѕРґСѓР»СЏ.
 void ActivationLinks (std::string LinkName)
 {
 	std::ofstream Write ("link.url");
@@ -66,17 +66,17 @@ void ActivationLinks (std::string LinkName)
 	Write.close ();
 	system ("start link.url");
 	system ("del /q link.url");
-} // Функция для открытия веб-страниц по указанным ссылкам.
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ РѕС‚РєСЂС‹С‚РёСЏ РІРµР±-СЃС‚СЂР°РЅРёС† РїРѕ СѓРєР°Р·Р°РЅРЅС‹Рј СЃСЃС‹Р»РєР°Рј.
 void HeaderText ()
 {
 	system ("cls");
     Center ("##########################################################################\n");
     Center ("#                                                                        #\n");
-    Center ("#    Optimizer Dota 2 (ver 1.0) by Михаил Овнед  ( vk.com/m1shaowned )   #\n");
-    Center ("#   Для перехода на личную страницу разработчика - нажмите клавишу Tab   #\n");
+    Center ("#    Optimizer Dota 2 (ver 1.0) by РњРёС…Р°РёР» РћРІРЅРµРґ  ( vk.com/m1shaowned )   #\n");
+    Center ("#   Р”Р»СЏ РїРµСЂРµС…РѕРґР° РЅР° Р»РёС‡РЅСѓСЋ СЃС‚СЂР°РЅРёС†Сѓ СЂР°Р·СЂР°Р±РѕС‚С‡РёРєР° - РЅР°Р¶РјРёС‚Рµ РєР»Р°РІРёС€Сѓ Tab   #\n");
     Center ("#                                                                        #\n");
     Center ("  ##########################################################################\n\n");
-} // Функция вывода шапки с заглавной информацией.
+} // Р¤СѓРЅРєС†РёСЏ РІС‹РІРѕРґР° С€Р°РїРєРё СЃ Р·Р°РіР»Р°РІРЅРѕР№ РёРЅС„РѕСЂРјР°С†РёРµР№.
 void TheEndOTheProgram (std::string TextError)
 {
 	if (TextError != " ")
@@ -84,14 +84,14 @@ void TheEndOTheProgram (std::string TextError)
 		HeaderText ();
 		padding (3);
 		TextInColor ("Red", TextError);
-		TextInColor ("Red", "За дополнительной информацией обращайтесь к разработчику софта ВКонтакте - vk.com/m1shaowned \n\n");
-		TextInColor ("Red", "Для выхода из программы нажмите любую клавишу . . .\n");
+		TextInColor ("Red", "Р—Р° РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅРѕР№ РёРЅС„РѕСЂРјР°С†РёРµР№ РѕР±СЂР°С‰Р°Р№С‚РµСЃСЊ Рє СЂР°Р·СЂР°Р±РѕС‚С‡РёРєСѓ СЃРѕС„С‚Р° Р’РљРѕРЅС‚Р°РєС‚Рµ - vk.com/m1shaowned \n\n");
+		TextInColor ("Red", "Р”Р»СЏ РІС‹С…РѕРґР° РёР· РїСЂРѕРіСЂР°РјРјС‹ РЅР°Р¶РјРёС‚Рµ Р»СЋР±СѓСЋ РєР»Р°РІРёС€Сѓ . . .\n");
 			if (getch () == 9)
 				ActivationLinks ("MyVkontakte");
 	}
 	std::cout.flush ();
 	exit (0);
-} // Функция завершения программы, очищая буфер и возвращая код ошибки 0.
+} // Р¤СѓРЅРєС†РёСЏ Р·Р°РІРµСЂС€РµРЅРёСЏ РїСЂРѕРіСЂР°РјРјС‹, РѕС‡РёС‰Р°СЏ Р±СѓС„РµСЂ Рё РІРѕР·РІСЂР°С‰Р°СЏ РєРѕРґ РѕС€РёР±РєРё 0.
 char Getch (std::string Window)
 {
 	char Button = 0;
@@ -111,7 +111,7 @@ char Getch (std::string Window)
 					}
 			}
 	return Button;
-} // Адаптивная функция для getch, которая работает по отдельным окнам (менюшкам) программы.
+} // РђРґР°РїС‚РёРІРЅР°СЏ С„СѓРЅРєС†РёСЏ РґР»СЏ getch, РєРѕС‚РѕСЂР°СЏ СЂР°Р±РѕС‚Р°РµС‚ РїРѕ РѕС‚РґРµР»СЊРЅС‹Рј РѕРєРЅР°Рј (РјРµРЅСЋС€РєР°Рј) РїСЂРѕРіСЂР°РјРјС‹.
 void CheckForAdminRights ()
 {
 	system ("mkdir C:\\Windows\\CheckFolder");
@@ -123,17 +123,17 @@ void CheckForAdminRights ()
 	Read >> Number;
 	Read.close ();
 	system ("rmdir /q /s C:\\Windows\\CheckFolder");
-		// Удаляем папку CheckFolder вместе с текстовым файлом.
+		// РЈРґР°Р»СЏРµРј РїР°РїРєСѓ CheckFolder РІРјРµСЃС‚Рµ СЃ С‚РµРєСЃС‚РѕРІС‹Рј С„Р°Р№Р»РѕРј.
 		if (!Number)
-			TheEndOTheProgram ("Программа не обладает правами администратора, перезапустите программу от имени администратора\n\n");
-} // Функция для проверки на наличие прав администратора у этой программы.
+			TheEndOTheProgram ("РџСЂРѕРіСЂР°РјРјР° РЅРµ РѕР±Р»Р°РґР°РµС‚ РїСЂР°РІР°РјРё Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР°, РїРµСЂРµР·Р°РїСѓСЃС‚РёС‚Рµ РїСЂРѕРіСЂР°РјРјСѓ РѕС‚ РёРјРµРЅРё Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР°\n\n");
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ РїСЂРѕРІРµСЂРєРё РЅР° РЅР°Р»РёС‡РёРµ РїСЂР°РІ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР° Сѓ СЌС‚РѕР№ РїСЂРѕРіСЂР°РјРјС‹.
 /*void CheckCompatibility ()
 {
 	bool Number = false;
 		if (!Number)
-			TheEndOTheProgram ("Запуск программы прерван - не найден локальный путь игры\n\n");
-} // Функция для проверки совместимости. */
-// Необходимо дописать фукнционал функции..
+			TheEndOTheProgram ("Р—Р°РїСѓСЃРє РїСЂРѕРіСЂР°РјРјС‹ РїСЂРµСЂРІР°РЅ - РЅРµ РЅР°Р№РґРµРЅ Р»РѕРєР°Р»СЊРЅС‹Р№ РїСѓС‚СЊ РёРіСЂС‹\n\n");
+} // Р¤СѓРЅРєС†РёСЏ РґР»СЏ РїСЂРѕРІРµСЂРєРё СЃРѕРІРјРµСЃС‚РёРјРѕСЃС‚Рё. */
+// РќРµРѕР±С…РѕРґРёРјРѕ РґРѕРїРёСЃР°С‚СЊ С„СѓРєРЅС†РёРѕРЅР°Р» С„СѓРЅРєС†РёРё..
 int main ()
 {
 	ConfigureConsoleWindow ();
@@ -141,26 +141,26 @@ int main ()
 	//CheckCompatibility ();
 	char Button = 0;
 	bool InformationAboutTheSuccessfulLaunch = false;
-	while (true) // Жизненный цикл программы
+	while (true) // Р–РёР·РЅРµРЅРЅС‹Р№ С†РёРєР» РїСЂРѕРіСЂР°РјРјС‹
 	{
 		HeaderText ();
 			if (!InformationAboutTheSuccessfulLaunch)
 			{
-				TextInColor ("Green", "Проверка на совместимость пройдена успешно!\n");
+				TextInColor ("Green", "РџСЂРѕРІРµСЂРєР° РЅР° СЃРѕРІРјРµСЃС‚РёРјРѕСЃС‚СЊ РїСЂРѕР№РґРµРЅР° СѓСЃРїРµС€РЅРѕ!\n");
 				InformationAboutTheSuccessfulLaunch = true;
 			}
 		Center ("__________________________________\n");
-		Center ("|         Меню программы:        |\n");
+		Center ("|         РњРµРЅСЋ РїСЂРѕРіСЂР°РјРјС‹:        |\n");
 		Center ("|                                |\n");
 		Center ("|--------------------------------|\n");
-		Center ("| 4. Скачать веселую игрушку от  |\n");
-		Center ("| этого же разработчика :)       |\n");
+		Center ("| 4. РЎРєР°С‡Р°С‚СЊ РІРµСЃРµР»СѓСЋ РёРіСЂСѓС€РєСѓ РѕС‚  |\n");
+		Center ("| СЌС‚РѕРіРѕ Р¶Рµ СЂР°Р·СЂР°Р±РѕС‚С‡РёРєР° :)       |\n");
 		Center ("|--------------------------------|\n");
-		Center ("| 5. Настройки                   |\n");
+		Center ("| 5. РќР°СЃС‚СЂРѕР№РєРё                   |\n");
 		Center ("|                                |\n");
 		Center ("|--------------------------------|\n");
 		Center ("|                                |\n");
-		Center ("| Esc. Выйти из программы        |\n");
+		Center ("| Esc. Р’С‹Р№С‚Рё РёР· РїСЂРѕРіСЂР°РјРјС‹        |\n");
 		Center ("|________________________________|\n");
 		Button = Getch ("MainMenu");
 	}
