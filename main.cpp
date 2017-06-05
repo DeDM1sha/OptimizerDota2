@@ -165,8 +165,3 @@ int main ()
 		Button = Getch ("MainMenu");
 	}
 }
-/*SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), (WORD)((10 << 4) | 10));
-		std::cout << "[][][][][][][][][][][][][][][][][][][][]\n";
-		Center ("");
-		std::cout << "[][][][][][][][][][][][][][][][][][][][]\n";
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), (WORD)((0 << 4) | 11));*da ladno ebtasfsfd*/
